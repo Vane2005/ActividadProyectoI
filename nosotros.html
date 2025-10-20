@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - FisioApp</title>
+    
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #138d75 0%, #667eea 100%);
+            min-height: 100vh;
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            height: auto !important;
+        }
+        
+        html {
+            overflow-y: auto !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        
+        .mission-vision-section {
+            margin: 40px 0;
+        }
+        
+        .mission-card, .vision-card {
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .mission-card {
+            background: linear-gradient(135deg, #16a085 0%, #138d75 100%);
+            color: white;
+        }
+        
+        .vision-card {
+            background: linear-gradient(135deg, #16a085 0%, #16a085 100%);
+            color: white;
+        }
+        
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .mission-card h4, .vision-card h4 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .mission-card i, .vision-card i {
+            font-size: 2.5rem;
+        }
+        
+        .team-section {
+            background-color: rgba(255,255,255,0.95);
+            padding: 60px 0;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #16a085, #16a085);
+            border-radius: 2px;
+        }
+        
+        .member-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .card-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .member-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .role-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #16a085, #138d75);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .card-content {
+            padding: 25px !important;
+        }
+        
+        .card-title {
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            color: #2c3e50 !important;
+            margin-bottom: 10px !important;
+        }
+        
+        .member-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="transparent z-depth-0">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo white-text">
+                <i class="material-icons">local_hospital</i> FisioApp
+            </a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger white-text">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html" class="white-text">Inicio</a></li>
+                <li><a href="nosotros.html" class="white-text">Nosotros</a></li>
+                <li><a href="objetivos.html" class="white-text">Objetivos</a></li>
+                <li><a href="avances.html" class="white-text">Avances</a></li>
+                <li><a href="contacto.html" class="white-text">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidenav -->
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html"><i class="material-icons">home</i>Inicio</a></li>
+        <li><a href="nosotros.html"><i class="material-icons">people</i>Nosotros</a></li>
+        <li><a href="objetivos.html"><i class="material-icons">flag</i>Objetivos</a></li>
+        <li><a href="avances.html"><i class="material-icons">trending_up</i>Avances</a></li>
+        <li><a href="contacto.html"><i class="material-icons">contact_mail</i>Contacto</a></li>
+    </ul>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1>Nuestro Equipo</h1>
+            <p style="font-size: 1.2rem;">Conoce al equipo detrás de FisioApp</p>
+        </div>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <div class="container mission-vision-section">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="mission-card z-depth-3">
+                    <h4>
+                        <i class="material-icons">rocket_launch</i>
+                        Misión
+                    </h4>
+                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                        Desarrollar una plataforma digital innovadora que facilite la comunicación entre fisioterapeutas y pacientes, 
+                        permitiendo la asignación, seguimiento y control de ejercicios terapéuticos de manera eficiente, 
+                        mejorando así la calidad del tratamiento y la recuperación de los pacientes.
+                    </p>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="vision-card z-depth-3">
+                    <h4>
+                        <i class="material-icons">visibility</i>
+                        Visión
+                    </h4>
+                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                        Convertirnos en la herramienta líder en gestión de tratamientos fisioterapéuticos, 
+                        reconocida por su facilidad de uso, eficiencia y por contribuir significativamente a la 
+                        mejora de la salud y bienestar de los pacientes a través de la tecnología.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <div class="container">
+            <h2 class="section-title">Conoce al Equipo</h2>
+            
+            <div class="row">
+                <!-- Member 1 -->
+                <div class="col s12 m6 l3">
+                    <div class="card member-card z-depth-3">
+                        <div class="card-image">
+                            <img src="img/Alejandro.jpeg" alt="Alejandro Jiménez">
+                            <span class="role-badge">Desarrollador Frontend</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Alejandro Jiménez</span>
+                            <p class="member-description">
+                                Encargado del diseño de interfaces y experiencia de usuario. Crea prototipos 
+                                intuitivos y accesibles para fisioterapeutas y pacientes.
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="material-icons">email</i></a>
+                                <a href="#"><i class="material-icons">link</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="col s12 m6 l3">
+                    <div class="card member-card z-depth-3">
+                        <div class="card-image">
+                            <img src="img/Vanessa.jpeg" alt="Vanessa Durán">
+                            <span class="role-badge">Líder de Proyecto</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Vanessa Durán</span>
+                            <p class="member-description">
+                                Responsable de la coordinación general del proyecto, gestión de tiempos y 
+                                comunicación con el equipo. Especializado en arquitectura de software y desarrollo. 
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="material-icons">email</i></a>
+                                <a href="#"><i class="material-icons">link</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="col s12 m6 l3">
+                    <div class="card member-card z-depth-3">
+                        <div class="card-image">
+                            <img src="img/Damian.jpeg" alt="Juan Cuervo">
+                            <span class="role-badge">Desarrollador Backend</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Juan Cuervo</span>
+                            <p class="member-description">
+                                Desarrolla la lógica del servidor, base de datos y APIs. Asegura la seguridad 
+                                y escalabilidad del sistema de gestión de pacientes.
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="material-icons">email</i></a>
+                                <a href="#"><i class="material-icons">link</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="col s12 m6 l3">
+                    <div class="card member-card z-depth-3">
+                        <div class="card-image">
+                            <img src="img/Juan Jose.jpeg" alt="Juan Marmol">
+                            <span class="role-badge">Desarrollador Frontend</span>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Juan Marmol</span>
+                            <p class="member-description">
+                                Implementa las interfaces diseñadas utilizando tecnologías web modernas. 
+                                Asegura la responsividad y accesibilidad de la aplicación.
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="material-icons">email</i></a>
+                                <a href="#"><i class="material-icons">link</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0; font-size: 1rem;">
+                © 2025 FisioApp - Proyecto Integrador I | Ingeniería de Sistemas
+            </p>
+            <p style="margin: 10px 0 0 0; font-size: 0.9rem; opacity: 0.8;">
+                Docente: Mg(c). Juan Pablo Pinillos Reina
+            </p>
+        </div>
+    </footer>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+        // Initialize Sidenav
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+            
+            // Toast de bienvenida
+            M.toast({
+                html: '¡Bienvenido a nuestro equipo!',
+                classes: 'rounded',
+                displayLength: 3000
+            });
+        });
+
+        // Animación de scroll para las cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.member-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
