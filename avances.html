@@ -1,0 +1,200 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivos - TerapiaFisica+</title>
+
+  <!-- Importar Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  
+  <!-- Importar íconos de Google -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: "Roboto", sans-serif;
+    }
+
+    /* ==== NAVBAR ==== */
+    nav {
+      background: linear-gradient(90deg, #0E816F, #13A98C);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .brand-logo {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 1.6rem;
+    }
+
+    .nav-wrapper ul li a {
+      font-size: 1.05rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-wrapper ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+    }
+
+    /* ==== TARJETAS ==== */
+    .card {
+      border-radius: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
+    }
+
+    h4, h5 {
+      color: #0E816F;
+      font-weight: 600;
+    }
+
+    .objetivo-icon {
+      color: #0E816F;
+    }
+
+    /* ==== COLLAPSIBLE ==== */
+    .collapsible-header {
+      font-weight: 500;
+      font-size: 16px;
+      color: #0E816F;
+    }
+
+    .collapsible-header i {
+      color: #0E816F !important;
+    }
+
+    .collapsible-body {
+      background-color: #f9f9f9;
+      border-left: 4px solid #0E816F;
+    }
+
+    .collapsible-body p {
+      color: #333;
+    }
+
+    footer {
+      background-color: #0B5F52;
+      color: white;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    /* ==== EFECTO DE SOMBRA PARA CONTENIDO ==== */
+    .section {
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">TerapiaFisica+</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
+        <li><a href="nosotros.html"><i class="material-icons left">group</i>Nosotros</a></li>
+        <li class="active"><a href="objetivos.html"><i class="material-icons left">flag</i>Objetivos</a></li>
+        <li><a href="avances.html"><i class="material-icons left">timeline</i>Avances</a></li>
+        <li><a href="contacto.html"><i class="material-icons left">contact_mail</i>Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Menú lateral para móvil -->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
+    <li><a href="nosotros.html"><i class="material-icons left">group</i>Nosotros</a></li>
+    <li class="active"><a href="objetivos.html"><i class="material-icons left">flag</i>Objetivos</a></li>
+    <li><a href="avances.html"><i class="material-icons left">timeline</i>Avances</a></li>
+    <li><a href="contacto.html"><i class="material-icons left">contact_mail</i>Contacto</a></li>
+  </ul>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <div class="section">
+      <h4 class="center-align">Objetivos de TerapiaFisica+</h4>
+
+      <!-- Card horizontal con imagen (ACTUALIZADA Y FUNCIONAL) -->
+      <div class="card horizontal z-depth-2">
+        <div class="card-image">
+          <img src="https://cdn.pixabay.com/photo/2017/01/12/19/59/physiotherapy-1971446_1280.jpg" 
+               alt="Terapia física" style="object-fit: cover; height: 100%;">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h5><i class="material-icons left objetivo-icon">stars</i> <span style="color:#0E816F;">Objetivo General</span></h5>
+            <p>
+              Diseñar y desarrollar una plataforma web que permita el seguimiento personalizado de pacientes en procesos de fisioterapia, 
+              registrando sus avances, ejercicios y rutinas asignadas por el profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible con objetivos específicos -->
+      <ul class="collapsible popout">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">check_circle</i>Crear interfaz amigable</div>
+          <div class="collapsible-body"><p>Para que los pacientes puedan consultar sus ejercicios y progreso fácilmente.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">assignment</i>Implementar registro de actividades</div>
+          <div class="collapsible-body"><p>Permite al fisioterapeuta hacer seguimiento individual a cada paciente.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">bar_chart</i>Desarrollar módulo de progreso</div>
+          <div class="collapsible-body"><p>Incluye reportes visuales del avance del paciente.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">forum</i>Facilitar comunicación</div>
+          <div class="collapsible-body"><p>Por medio de mensajes o comentarios entre fisioterapeuta y paciente.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">lock</i>Garantizar confidencialidad</div>
+          <div class="collapsible-body"><p>Asegurando la privacidad e integridad de los datos médicos.</p></div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="center-align">
+    <div class="container">
+      <p>© 2025 TerapiaFisica+ | Proyecto académico</p>
+    </div>
+  </footer>
+
+  <!-- Importar Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- JS personalizado -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar menú lateral
+      M.Sidenav.init(document.querySelectorAll('.sidenav'));
+
+      // Inicializar collapsibles
+      M.Collapsible.init(document.querySelectorAll('.collapsible'));
+
+      // Mostrar toast de bienvenida
+      M.toast({html: 'Bienvenido a TerapiaFisica+', classes: 'rounded teal lighten-1'});
+    });
+  </script>
+</body>
+</html>
